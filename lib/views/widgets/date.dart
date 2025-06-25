@@ -8,19 +8,17 @@ class Date extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-                // Date: Month Year
-                DateFormat.yMMMM().format(DateTime.now()),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              ),
-          SizedBox(width: 6),
-          Icon(Icons.calendar_month),
-        ],
-      ),
-    );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+              // Date: Month Year
+              DateFormat.yMMMM().format(DateTime.now()),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            ),
+        SizedBox(width: 6),
+        Icon(Icons.calendar_month),
+      ],
+      );
   }
 }

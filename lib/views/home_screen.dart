@@ -2,33 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'widgets/date.dart';
 import 'widgets/location.dart';
-import 'widgets/in_season_list.dart';
+import 'widgets/in_season_display.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-      // browser tab title
-      title: "Home",
-      debugShowCheckedModeBanner: false,
-      // Body
-      home: Scaffold(                                    
-        body: Center(
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Date(),
-              SizedBox(height: 8),
-              Location(),
-              SizedBox(height: 8),
-              InSeasonList(),
-            ],
-            ),
-          ),
-        ),
-      );
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+      children: [
+        Date(),
+        SizedBox(height: 8),
+        Location(),
+        SizedBox(height: 8),
+        InSeasonDisplay(),
+      ],
+      ),
+    );
   }
 }

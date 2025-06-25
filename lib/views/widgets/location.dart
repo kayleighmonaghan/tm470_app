@@ -7,9 +7,8 @@ class Location extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Glasgow, Scotland',
@@ -18,7 +17,6 @@ class Location extends StatelessWidget {
           // SizedBox(width: 8),
           Icon(Icons.location_on),
         ],
-      ),
-    );
+      );
   }
 }

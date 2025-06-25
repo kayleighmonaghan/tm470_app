@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-class InSeasonList extends StatelessWidget {
-    const InSeasonList({
+class CurrentProduce extends StatelessWidget {
+    const CurrentProduce({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final inSeason = [
+      'Asparagus',
+      'Broccoli',
+      'Cabbage',
+      'Carrots',
+      'Cauliflower',
+      'Kale',
+      'Leeks',
+      'Lettuce',
+      'Radishes',
+      'Spinach',
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Here's what's in season right now:",
-        ),
-        Text(
-          '\u2022 Asparagus',
-        ),
-        Text(
-          '\u2022 Broccoli',
-        ),
-        Text(
-          '\u2022 Cabbage',
-        ),
-      ],
+      children: inSeason.map((item) => Text('\u2022 $item')).toList(),
     );
   }
 }
