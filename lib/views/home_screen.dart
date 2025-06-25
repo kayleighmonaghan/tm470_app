@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
+import 'widgets/date.dart';
+import 'widgets/location.dart';
+import 'widgets/in_season_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,13 +17,18 @@ class HomeScreen extends StatelessWidget {
       // Body
       home: Scaffold(                                    
         body: Center(
-          child: Text(
-            // Date format
-            DateFormat.MMMMd().format(DateTime.now()),
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Date(),
+              SizedBox(height: 8),
+              Location(),
+              SizedBox(height: 8),
+              InSeasonList(),
+            ],
+            ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
