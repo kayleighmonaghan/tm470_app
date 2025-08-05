@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RecipeCard extends StatelessWidget {
-  const RecipeCard({
+class BlogCard extends StatelessWidget {
+  const BlogCard({
     super.key,
   });
 
@@ -30,23 +30,23 @@ class RecipeCard extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                'Recipe Title',
+                'Article Title',
                 style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-                Row(
+              Row(
                 children: const [
-                  Icon(Icons.timer, size: 16),
+                  Icon(Icons.person, size: 16),
                   SizedBox(width: 4),
-                  Text('prep: 10 minutes'),
+                  Text('John Smith'),
                   SizedBox(width: 12),
                   Icon(Icons.timer, size: 16),
                   SizedBox(width: 4),
-                  Text('cook: 20 minutes'),
+                  Text('10 minute read'),
                 ],
-                ),
+              ),
               const SizedBox(height: 8),
-              const Text('Description of the recipe goes here.'),
+              const Text('Article abstract goes here.'),
             ],
           ),
         ),
