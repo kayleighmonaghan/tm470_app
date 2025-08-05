@@ -5,6 +5,8 @@ import 'recipes_screen.dart';
 import 'blog_screen.dart';
 
 class MainHomeScreen extends StatefulWidget {
+  const MainHomeScreen({super.key});
+
   @override
   _MainHomeScreenState createState() => _MainHomeScreenState();
 }
