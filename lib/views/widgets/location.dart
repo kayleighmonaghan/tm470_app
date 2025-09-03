@@ -28,20 +28,32 @@ class _LocationState extends State<Location> {
     );
   }
 
-  Future<void> _getCoordinates() async {
-    try {
-      Position position = await Geolocator.getCurrentPosition(
-);
-      setState(() {
-        _currentPosition = position;
-      });
-      var currentLatitude = position.latitude;
-      var currentLongitude = position.longitude;
-      await _getLocationFromCoordinates(currentLatitude, currentLongitude); // Await async function
-    } catch (e) {
-      print(e);
+Future<void> _getCoordinates() async {
+  try {
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
+        setState(() {
+          _currentAddress = "Location permission denied";
+        });
+        return;
+      }
     }
+    Position position = await Geolocator.getCurrentPosition();
+    setState(() {
+      _currentPosition = position;
+    });
+    var currentLatitude = position.latitude;
+    var currentLongitude = position.longitude;
+    await _getLocationFromCoordinates(currentLatitude, currentLongitude); // Await async function
+  } catch (e) {
+    print(e);
+    setState(() {
+      _currentAddress = "Error: $e";
+    });
   }
+}
 
   Future<void> _getLocationFromCoordinates(double latitude, double longitude) async {
     try {
